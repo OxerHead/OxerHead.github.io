@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <link rel="icon" type="image/x-icon" href="images/Favicon.png">
+      <title>Maah</title>
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/style.css">
+      <script src="https://www.paypal.com/sdk/js?client-id=AaALqjD8VZ0BohJZa6Icehaf4D1I1t4SzaqIgjVyjlxweW_8H--SA2_4drBvVzkT32NSU_IItmPzrc1k"></script>
+      <style>
+        #paypal-button-container {
+            margin: auto;
+  width: 40%;
+  border: 3px solid rgba(0, 128, 0, 0);
+  padding: 10px;
+        }
+
+
+     </style>
+   </head>
+   <body class="main-layout inner_page">
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="#"/></div>
+      </div>
+      <header>
+         <div class="header">
+            <div class="container-fluid">
+               <div class="row d_flex">
+                  <div class=" col-md-2 col-sm-3 col logo_section">
+                     <div class="full">
+                        <div class="center-desk">
+                           <div class="logo">
+                              <a href="index.html"><img src="images/logo1.png" alt="#"/></a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-8 col-sm-9">
+                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarsExample04">
+                           <ul class="navbar-nav mr-auto">
+                              <li class="nav-item ">
+                                 <a class="nav-link" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item active">
+                                 <a class="nav-link" href="quality.html">Videos</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="vote.html">Vote</a>
+                              </li>
+                              <li class="nav-item">
+                                 <a class="nav-link" href="contact.html">Contact Us</a>
+                              </li>
+
+                           </ul>
+
+                        </div>
+                     </nav>
+                  </div>
+                  <div class="col-md-2">
+                    <br><br>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div class="contact">
+         <div class="container">
+             <div class="row">
+                 <div class="col-md-12">
+                     <div class="titlepage text_align_center">
+                         <h2>Subscription</h2>
+                     </div>
+                 </div>
+                 <div class="col-md-12">
+                     <div class="titlepage text_align_center">
+                         <h4>This subscription includes tutorials that are exclusively available to members. It also provides the source scripts for the projects we do on YouTube. By subscribing, you will support me significantly. Join now for only $10 and claim your place!</h4>
+                     </div>
+                     <center><video src="Videos/VIDEO.mp4" width="80%" controls>
+                         <source src="BACKUP" type="video/mp4">
+                     </video></center>
+                 </div>
+             </div>
+         </div>
+     </div>
+     <div id="paypal-button-container"></div>
+
+      <br><br><br><br><br>      
+
+      <footer>
+         <div class="footer">
+            <div class="copyright">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <p>© 2024 All Rights Reserved.  <a href="https://www.youtube.com/@Maah_Ali"> Muhamed Ali</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+
+
+      <script>
+         paypal.Buttons({
+             createOrder: function(data, actions) {
+                 return actions.order.create({
+                     purchase_units: [{
+                         amount: {
+                             currency_code: 'USD',
+                             value: '10'
+                         },
+                         description: 'Subscription'
+                     }]
+                 });
+             },
+             onApprove: function(data, actions) {
+                 return actions.order.capture().then(function(details) {
+                     alert('Transaction completed by ' + details.payer.name.given_name);
+                     window.location.href = 'succeed.html';
+
+                 });
+             }
+         }).render('#paypal-button-container'); 
+     </script>
+
+      <script src="js/jquery.min.js"></script>
+      <script src="js/custom.js"></script>
+   </body>
+</html>
