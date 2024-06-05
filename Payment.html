@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Oxer</title>
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Dosis:400,600,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  <script src="https://www.paypal.com/sdk/js?client-id=AaALqjD8VZ0BohJZa6Icehaf4D1I1t4SzaqIgjVyjlxweW_8H--SA2_4drBvVzkT32NSU_IItmPzrc1k"></script>
+<style>
+    #paypal-button-container {
+            margin: auto;
+  width: 90%;
+  border: 3px solid rgba(0, 128, 0, 0);
+  padding: 10px;
+        }
+</style>
+</head>
+
+<body>
+  <div class="hero_area">
+    <header class="header_section">
+      <div class="container">
+        <div class="header_nav">
+          <a class="navbar-brand brand_desktop" href="index.html">
+            <img src="images/logo.png" alt="" />
+          </a>
+          <div class="main_nav">
+            <div class="top_nav">
+              <ul class=" ">
+                <li class="">
+                  <a class="" href="">
+                    <img src="images/mail.png" alt="" />
+                    <span>muhamedali.maah@gmail.com</span>
+                  </a>
+                </li>
+                <li class="">
+                  <a class="" href="">
+                    <img src="images/location.png" alt="" />
+                    <span>Sweden, United states</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="bottom_nav">
+              <nav class="navbar navbar-expand-lg custom_nav-container">
+                <a class="navbar-brand brand_mobile" href="index.html">
+                  <img src="images/logo.png" alt="" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+               
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class=" slider_section position-relative">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-2 offset-md-2">
+            <div class="slider_heading">
+              <h2>
+
+              </h2>
+            </div>
+          </div>
+          <div class="col-md-8 mx-auto">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <div id="paypal-button-container"></div>
+
+        
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+
+  <div class="info_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10 ml-auto">
+          <div class="row info_main-row">
+            <div class="col-md-6 pr-0">
+
+              <section class=" footer_section ">
+                <p>
+                  &copy; 2024 All Rights Reserved. Design by
+                  Muhamed Ali</a>
+                </p>
+              </section>
+
+            </div>
+            <div class="col-md-6  px-0">
+              <div class="img-box">
+                <img src="images/footer-img.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+
+<script>
+  paypal.Buttons({
+      createOrder: function(data, actions) {
+          return actions.order.create({
+              purchase_units: [{
+                  amount: {
+                      currency_code: 'USD',
+                      value: '10'
+                  },
+                  description: 'Red Reflex Head'
+              }]
+          });
+      },
+      onApprove: function(data, actions) {
+          return actions.order.capture().then(function(details) {
+              alert('Transaction completed by ' + details.payer.name.given_name);
+              window.location.href = 'succeed.html';
+
+          });
+      }
+  }).render('#paypal-button-container'); 
+</script>
+  <script>
+    function openNav() {
+      document.getElementById("myNav").classList.toggle("menu_width");
+      document.querySelector(".custom_menu-btn").classList.toggle("menu_btn-style");
+    }
+  </script>
+
+  <script type="text/javascript">
+    $(".owl-carousel").owlCarousel({
+      loop: false,
+      margin: 10,
+      nav: true,
+      navText: [],
+      autoplay: true,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+      }
+    });
+
+
+  </script>
+
+</body>
+
+</html>
